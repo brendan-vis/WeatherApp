@@ -1,0 +1,34 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WeatherApp"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="WeatherApp.ForecastWindow"
+        Title="Prévisions Météorologiques">
+    <StackPanel>
+        <TextBlock Text="Prévisions sur 5 jours à 12:00" FontSize="20" HorizontalAlignment="Center" Margin="10"/>
+        <ListBox x:Name="ForecastList" Margin="10">
+            <ListBox.ItemTemplate>
+                <DataTemplate DataType="local:ListItem">
+                    <StackPanel Orientation="Vertical" Margin="5">
+                        <TextBlock Text="{Binding City}" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="Coordonnées :" FontSize="14" FontWeight="SemiBold"/>
+                        <TextBlock Text="{Binding Latitude}" FontSize="14"/>
+                        <TextBlock Text="{Binding Longitude}" FontSize="14"/>
+                        <StackPanel Orientation="Horizontal" Margin="5">
+                            <Image Source="{Binding IconUrl}" Width="50" Height="50" Margin="5"/>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Date}" FontSize="16"/>
+                                <TextBlock Text="{Binding Time}" FontSize="14"/>
+                                <TextBlock Text="{Binding Temperature}" FontSize="14"/>
+                                <TextBlock Text="{Binding Description}" FontSize="14"/>
+                                <TextBlock Text="{Binding Humidity}" FontSize="14"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
+</Window>

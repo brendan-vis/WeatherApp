@@ -1,0 +1,16 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="WeatherApp.MainWindow"
+        Title="WeatherApp">
+    <StackPanel>
+        <TextBlock Text="Weather App" FontSize="24" HorizontalAlignment="Center" Margin="10"/>
+        <TextBox x:Name="CityInput" Width="200" Watermark="Entrez une ville" Margin="10" HorizontalAlignment="Center"/>
+        <Button Content="Obtenir la météo" Click="OnGetWeatherClicked" Width="150" HorizontalAlignment="Center" Margin="5"/>
+        <Button Content="Voir les Prévisions" Click="OnViewForecastClicked" Width="200" HorizontalAlignment="Center" Margin="10"/>
+        <TextBlock x:Name="WeatherInfo" FontSize="18" TextWrapping="Wrap" Margin="10" HorizontalAlignment="Center"/>
+        <Image x:Name="WeatherIcon" Width="100" Height="100" HorizontalAlignment="Center" Margin="10"/>
+    </StackPanel>
+</Window>
